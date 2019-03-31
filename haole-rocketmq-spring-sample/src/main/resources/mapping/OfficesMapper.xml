@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haole.rocketmq.dao.OfficesMapper">
+
+	<insert id="insert" parameterType="com.haole.rocketmq.model.Offices" >
+
+        insert into acct_fund_detail_info(officeCode,city,phone,addressLine1,addressLine2,
+        state,country,postalCode,territory)
+		values (#{officeCode},#{city},#{phone},#{addressLine1},#{addressLine2},
+        #{state},#{country},#{postalCode},#{territory})
+	</insert>
+
+
+
+</mapper>
