@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 import java.io.IOException;
 
@@ -12,10 +13,9 @@ import java.io.IOException;
  * @author shengjunzhao
  * @date 2019/3/31
  */
-@SpringBootApplication(scanBasePackages = { "com.haole.rocketmq" })
+@SpringBootApplication(scanBasePackages = { "com.haole.rocketmq" })  // ,exclude= DataSourceAutoConfiguration.class
 @MapperScan("com.haole.rocketmq.dao")
 public class App {
-
 
     public static void main(String[] args) throws IOException {
         SpringApplication application = new SpringApplication(App.class);

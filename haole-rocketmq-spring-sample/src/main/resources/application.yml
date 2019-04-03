@@ -1,14 +1,14 @@
 spring:
   application:
-    name:haole-rocketmq-spring-sample
+    name: haole-rocketmq-spring-sample
 
   datasource:
-    name: test
-    url: jdbc:mysql://127.0.0.1:3306/yiibaidb
+    name: hikari
+    url: jdbc:mysql://127.0.0.1:3306/yiibaidb?useUnicode=true&amp;characterEncoding=utf-8&amp;useOldAliasMetadataBehavior=true
     username: ddl_user
     password: sjzsjz
     type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver   #com.mysql.jdbc.Driver
     filters: stat
     maxActive: 20
     initialSize: 1
@@ -24,8 +24,9 @@ spring:
     maxOpenPreparedStatements: 20
 
 server:
-  port:10600
+  port: 10600
 
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.haole.rocketmq.model
+  config-location: classpath:mybatis-config.xml
