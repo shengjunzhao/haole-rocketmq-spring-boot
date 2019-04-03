@@ -1,4 +1,7 @@
 spring:
+  application:
+    name:haole-rocketmq-spring-sample
+
   datasource:
     name: test
     url: jdbc:mysql://127.0.0.1:3306/yiibaidb
@@ -19,6 +22,9 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
+
+server:
+  port:10600
 
 mybatis:
   mapper-locations: classpath:mapping/*.xml
