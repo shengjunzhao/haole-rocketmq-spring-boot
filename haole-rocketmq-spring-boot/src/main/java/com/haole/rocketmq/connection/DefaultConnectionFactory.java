@@ -73,10 +73,17 @@ public class DefaultConnectionFactory implements ConnectionFactory, Initializing
 
     @Override
     public DefaultMQProducer getDefaultMQProducer(String channel) {
-        ChannelProperties channelProperties = rocketProperties.getChannels().get(channel);
-        Assert.notNull(channelProperties, channel + " channel must not be null.");
-
-        return null;
+        synchronized(this.producerMap) {
+            DefaultMQProducer producer = producerMap.get(channel);
+            if (null != producer) {
+                return producer;
+            }
+            ChannelProperties channelProperties = rocketProperties.getChannels().get(channel);
+            Assert.notNull(channelProperties, channel + " channel must not be null.");
+            producer = new DefaultMQProducer(channel);
+            producerMap.put(channel, producer);
+            return producer;
+        }
     }
 
     @Override
