@@ -26,7 +26,7 @@
         <rocketmq.version>4.5.0</rocketmq.version>
         <HikariCP.version>3.3.1</HikariCP.version>
         <mybatis.version>2.0.0</mybatis.version>
-        <mysql.version>8.0.15</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
 
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
